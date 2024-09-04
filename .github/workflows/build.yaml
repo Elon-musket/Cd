@@ -6,17 +6,6 @@ on:
         - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        - name: build-push
-          uses: docker/build-push-action@v1
-          with:
-            username: enzo_vargas
-            registry: docker.io
-            repository: enzo_vargas/cd
-            tag_with_sha: true
     sonarcloud:
         name: SonarCloud
         runs-on: ubuntu-latest
