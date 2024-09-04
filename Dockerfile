@@ -11,7 +11,7 @@ COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o app .
 
 # Stage 2: Create a minimal scratch container
-FROM node:7.1.0-alpine
+FROM scratch
 
 # Copy the binary from the builder stage into the scratch container
 COPY --from=builder /app/app /app
